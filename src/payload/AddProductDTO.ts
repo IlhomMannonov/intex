@@ -4,6 +4,9 @@ import { Double } from "typeorm";
 @InputType()
 export class AddProductDTO {
 
+  @Field({ nullable: true })
+  id: number;
+
   @Field()
   category_id: number;
 
@@ -39,6 +42,9 @@ export class AddProductDTO {
 
   @Field()
   country_id: number;
+
+  @Field({ nullable: true })
+  attachment_ids: string;
 
 
 }

@@ -19,11 +19,14 @@ import { User } from "./entity/User";
 import { ProductModule } from "./module/ProductModule";
 import { Attachment } from "./entity/Attachment";
 import { AttachmentModule } from "./module/AttachmentModule";
+import { Order } from "./entity/Order";
+import { OrderModule } from "./module/OrderModul";
 
 
 @Module({
   imports: [
     AttachmentModule,
+    OrderModule,
     UserModule,
     ProductModule,
     CategoryModule,
@@ -39,7 +42,7 @@ import { AttachmentModule } from "./module/AttachmentModule";
       username: "postgres",
       password: "root123",
       database: "db1",
-      entities: [Category, Language, Product, SmsCode, UserDevice, User, Attachment],
+      entities: [Category, Language, Product, SmsCode, UserDevice, User, Attachment, Order],
       synchronize: true
     }),
     JwtModule.register({

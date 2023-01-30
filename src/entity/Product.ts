@@ -46,8 +46,9 @@ export class Product extends AbsLongNoUser {
   @Column()
   @Field({ nullable: true })
   country_id: number;
-  @Column("int", { array: true })
-  @Field()
-  attachments_id: number[];
+
+  @Column({ array: true, nullable: true, default: [], type: "int" })
+  @Field({ nullable: true })
+  attachments_ids: string;
 
 }
